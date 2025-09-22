@@ -84,32 +84,6 @@ return {
     },
   },
   {
-    "nvim-tree/nvim-tree.lua",
-    opts = {
-      view = { width = 30, side = "left" },
-      on_attach = function(bufnr)
-        local api = require("nvim-tree.api")
-
-        local function opts(desc)
-          return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-        end
-
-        -- сбрасываем дефолтные бинды
-        vim.keymap.set("n", "<CR>", "", { buffer = bufnr })
-        vim.keymap.del("n", "<CR>", { buffer = bufnr })
-
-        -- новое управление
-        vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
-        vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
-        vim.keymap.set("n", "H", api.tree.collapse_all, opts("Collapse All"))
-        vim.keymap.set("n", "s", api.node.open.vertical, opts("Open: Vertical Split"))
-      end,
-    },
-    keys = {
-      { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle Explorer" },
-    },
-  },
-  {
     "echasnovski/mini.surround",
     keys = {
       { "sa", desc = "Add Surrounding", mode = { "n", "v" } },
