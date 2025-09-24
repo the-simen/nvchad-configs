@@ -1,0 +1,17 @@
+{
+  "rh": {
+    "prefix": "rh",
+    "desc": "React Hook",
+    "body": ["\n", "export const ${1:name} = () => {", "\n${0}", "}"]
+  },
+  "cl": {
+    "prefix": "cl",
+    "desc": "console.log",
+    "body": ["console.log(${0});"]
+  },
+  "ucl": {
+    "prefix": "ucl",
+    "desc": "console.log inside useEffect",
+    "body": ["useEffect(() => {", "\tconsole.log(${1});", "}, [${0}]);"]
+  }
+}

@@ -18,3 +18,17 @@ map("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down", silent = true })
 map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down", silent = true })
 map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up", silent = true })
 map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", silent = true })
+
+map("n", "<leader>n", vim.lsp.buf.code_action, { desc = "Code Actions" })
+
+-- indent without losing selection
+map("v", "<", "<gv", { desc = "Indent left", silent = true })
+map("v", ">", ">gv", { desc = "Indent right", silent = true })
+
+-- resize split
+map("n", "<", ":vertical resize -5<CR>", { noremap = true, silent = true })
+map("n", ">", ":vertical resize +5<CR>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>rn", function()
+  return ":IncRename " .. vim.fn.expand "<cword>"
+end, { expr = true })

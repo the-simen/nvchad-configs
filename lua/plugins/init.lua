@@ -4,7 +4,6 @@ return {
     -- event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -12,24 +11,59 @@ return {
     end,
   },
   {
+    "smjonas/inc-rename.nvim",
+    config = function()
+      require("inc_rename").setup()
+    end,
+  },
+  { "RRethy/vim-illuminate", opts = {} },
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      view = { width = 40, side = "left" },
+      on_attach = function(bufnr)
+        local api = require "nvim-tree.api"
+
+        local function opts(desc)
+          return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        end
+
+        -- Оставляем стандартные бинды NvChad
+        api.config.mappings.default_on_attach(bufnr)
+
+        vim.keymap.set("n", "l", api.node.open.edit, opts "Open")
+        vim.keymap.set("n", "h", api.node.navigate.parent_close, opts "Close Directory")
+
+        -- Добавляем свои бинды для изменения ширины дерева
+        vim.keymap.set("n", "<", function()
+          vim.cmd "vertical resize -5"
+        end, opts "Shrink nvim-tree")
+
+        vim.keymap.set("n", ">", function()
+          vim.cmd "vertical resize +5"
+        end, opts "Expand nvim-tree")
+      end,
+    },
+  },
+  {
     "stevearc/dressing.nvim",
     event = "VeryLazy",
     config = function()
       -- Настройка dressing
-      require("dressing").setup({
+      require("dressing").setup {
         input = {
-          enabled = true,          -- включаем для vim.ui.input и командной строки
-          border = "single",       -- рамка без скруглений
-          winblend = 10,           -- прозрачность
+          enabled = true, -- включаем для vim.ui.input и командной строки
+          border = "single", -- рамка без скруглений
+          winblend = 10, -- прозрачность
           relative = "editor",
           prefer_width = 60,
         },
         select = {
-          enabled = true,          -- включаем для vim.ui.select
+          enabled = true, -- включаем для vim.ui.select
           backend = { "telescope", "fzf_lua", "builtin" },
           trim_prompt = true,
         },
-      })
+      }
 
       -- Скрываем стандартную командную строку, чтобы dressing показывал popup
       vim.o.cmdheight = 0
@@ -41,15 +75,15 @@ return {
     event = "VeryLazy",
     dependencies = { "MunifTanjim/nui.nvim" },
     config = function()
-      require("noice").setup({
+      require("noice").setup {
         cmdline = {
-          enabled = true,      -- перехватывает командную строку
+          enabled = true, -- перехватывает командную строку
           view = "cmdline_popup",
-          opts = { position = { row = 10, col = "50%" }, size = { width = 60 } },
+          opts = { position = { row = 5, col = "50%" }, size = { width = 60 } },
         },
         popupmenu = { enabled = true, backend = "nui" },
         lsp = { hover = { enabled = true }, signature = { enabled = true } },
-      })
+      }
     end,
   },
   {
@@ -65,6 +99,7 @@ return {
         "gopls",
         "js-debug-adapter",
         "typescript-language-server",
+        "vtsls",
       },
     },
   },
@@ -91,7 +126,7 @@ return {
     },
     opts = {
       mappings = {
-        add = "sa",    -- добавить окружение
+        add = "sa", -- добавить окружение
         delete = "sd", -- удалить окружение
       },
     },
@@ -113,18 +148,28 @@ return {
     "karb94/neoscroll.nvim",
     event = "VeryLazy",
     config = function()
-      require("neoscroll").setup({
+      require("neoscroll").setup {
         -- duration = 250, -- по умолчанию 250ms
-      })
+      }
     end,
-  }
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "tsx",
+        "json",
+        "jsonc",
+        "yaml",
+        "markdown",
+      },
+    },
+  },
 }

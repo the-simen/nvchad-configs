@@ -1,0 +1,42 @@
+{
+  "rfc": {
+    "prefix": "rfc",
+    "desc": "React Functional Component",
+    "body": [
+      "\n",
+      "export const ${1:name} = () => {",
+      "",
+      "\treturn (",
+      "\t\t<div>${0}</div>",
+      "\t)",
+      "}"
+    ]
+  },
+  "rfcp": {
+    "prefix": "rfcp",
+    "desc": "React Functional Component with Props",
+    "body": [
+      "\n",
+      "type TProps = Readonly<{",
+      "\t${3}",
+      "}>",
+      "",
+      "export const ${1:Component} = (${2:props}: TProps) => {",
+      "",
+      "\treturn (",
+      "\t\t<div>${0}</div>",
+      "\t)",
+      "}"
+    ]
+  },
+  "cl": {
+    "prefix": "cl",
+    "desc": "console.log",
+    "body": ["console.log(${0});"]
+  },
+  "ucl": {
+    "prefix": "ucl",
+    "desc": "console.log inside useEffect",
+    "body": ["useEffect(() => {", "\tconsole.log(${1});", "}, [${0}]);"]
+  }
+}
