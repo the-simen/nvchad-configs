@@ -9,6 +9,8 @@ map("i", "jj", "<ESC>")
 map("i", "<C-h>", "<BS>")
 map("i", "<C-j>", "<CR>")
 
+map("n", "<leader>td", "<cmd>TodoTelescope<cr>", { desc = "TodoTelecope" })
+
 map("n", "<leader>wv", "<cmd>vsplit<cr>", { desc = "Vertical Split" })
 map("n", "<leader>wh", "<cmd>split<cr>", { desc = "Horizontal Split" })
 map("n", "<leader>wd", "<C-w>c", { desc = "Close current split" })
@@ -20,6 +22,14 @@ map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up", silent = true })
 map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", silent = true })
 
 map("n", "<leader>n", vim.lsp.buf.code_action, { desc = "Code Actions" })
+
+vim.keymap.set("n", "<leader>cd", function()
+  vim.diagnostic.open_float(nil, {
+    scope = "cursor",
+    focus = true,
+    border = "rounded",
+  })
+end, { desc = "Show diagnostics under cursor" })
 
 -- indent without losing selection
 map("v", "<", "<gv", { desc = "Indent left", silent = true })

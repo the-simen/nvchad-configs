@@ -15,10 +15,17 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-  opts = opts or {}
-  opts.border = "rounded" -- Or any other border
-  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+local util = vim.lsp.util
+
+-- Сохраняем оригинал один раз
+if not util.orig_open_floating_preview then
+    util.orig_open_floating_preview = util.open_floating_preview
+end
+
+function open_floating_preview(contents, syntax, opts)
+    opts = opts or {}
+    opts.border = opts.border or "rounded"
+    return util.orig_open_floating_preview(contents, syntax, opts)
 end
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!

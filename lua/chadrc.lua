@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "aquarium",
+  theme = "ashes",
   transparency = true,
   border = "rounded",
   -- hl_override = {
@@ -37,7 +37,7 @@ M.ui = {
     -- lazyload it when there are 1+ buffers
     tabufline = {
       enabled = true,
-      lazyload = true,
+      lazyload = false,
       order = { "treeOffset", "buffers", "tabs", "btns" },
       modules = nil,
     },
