@@ -17,6 +17,9 @@ _Mode: n = Normal, i = Insert, v = Visual_
 | `>` | Tab selected right | v |
 | `<` | Vertical decrease window size | n |
 | `>` | Vertical increase window size | n |
+| `<M-h>` | Toggle horizontal terminal | n |
+| `<M-v>` | Toggle vertical terminal | n |
+| `<M-i>` | Toggle floating terminal | n |
 
 ## Nvim-tree
 | Key | Description | Mode |
