@@ -21,7 +21,8 @@ map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down", silent = t
 map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up", silent = true })
 map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", silent = true })
 
-map("n", "<leader>n", vim.lsp.buf.code_action, { desc = "Code Actions" })
+map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
+map("n", "<leader>rm", "<cmd>RenderMarkdown toggle<cr>", { desc = "Toggle Render Markdown" })
 
 vim.keymap.set("n", "<leader>cd", function()
   vim.diagnostic.open_float(nil, {

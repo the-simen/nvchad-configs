@@ -1,6 +1,26 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "html", "cssls", "tsserver", "vtsls" }
+vim.lsp.config["cssls"] = {
+  settings = {
+    css = {
+      lint = {
+        unknownAtRules = "ignore",
+      },
+    },
+    scss = {
+      lint = {
+        unknownAtRules = "ignore",
+      },
+    },
+    less = {
+      lint = {
+        unknownAtRules = "ignore",
+      },
+    },
+  },
+}
+
+local servers = { "html", "cssls", "vtsls" }
 vim.lsp.enable(servers)
 
--- read :h vim.lsp.config for changing options of lsp servers 
+-- read :h vim.lsp.config for changing options of lsp servers

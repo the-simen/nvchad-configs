@@ -9,6 +9,9 @@ M.base46 = {
   theme = "ashes",
   transparency = true,
   border = "rounded",
+  integrations = {
+    "render-markdown",
+  }
   -- hl_override = {
   -- 	Comment = { italic = true },
   -- 	["@comment"] = { italic = true },
@@ -17,30 +20,30 @@ M.base46 = {
 
 M.nvdash = { load_on_startup = true }
 M.ui = {
-    cmp = {
-      icons = true,
-      lspkind_text = true,
-      style = "default", -- default/flat_light/flat_dark/atom/atom_colored
-    },
+  cmp = {
+    icons = true,
+    lspkind_text = true,
+    style = "atom_colored", -- default/flat_light/flat_dark/atom/atom_colored
+  },
 
-    telescope = { style = "bordered" }, -- borderless / bordered
+  telescope = { style = "bordered" }, -- borderless / bordered
 
-    statusline = {
-      theme = "default", -- default/vscode/vscode_colored/minimal
-      -- default/round/block/arrow separators work only for default statusline theme
-      -- round and block will work for minimal theme only
-      separator_style = "default",
-      order = nil,
-      modules = nil,
-    },
+  statusline = {
+    theme = "default", -- default/vscode/vscode_colored/minimal
+    -- default/round/block/arrow separators work only for default statusline theme
+    -- round and block will work for minimal theme only
+    separator_style = "default",
+    order = nil,
+    modules = nil,
+  },
 
-    -- lazyload it when there are 1+ buffers
-    tabufline = {
-      enabled = true,
-      lazyload = false,
-      order = { "treeOffset", "buffers", "tabs", "btns" },
-      modules = nil,
-    },
+  -- lazyload it when there are 1+ buffers
+  tabufline = {
+    enabled = true,
+    lazyload = false,
+    order = { "treeOffset", "buffers", "tabs", "btns" },
+    modules = nil,
+  },
 }
 
 return M
