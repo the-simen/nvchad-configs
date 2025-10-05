@@ -4,11 +4,11 @@ return {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-nvim-lsp",
-    "L3MON4D3/LuaSnip", -- если хочешь сниппеты
+    "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
-    "Exafunction/codeium.nvim", -- Codeium как source
+    "Exafunction/codeium.nvim",
   },
-  -- event = "VeryLazy",
+
   config = function()
     local cmp = require "cmp"
     local luasnip = require "luasnip"

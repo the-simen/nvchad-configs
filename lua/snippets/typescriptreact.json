@@ -1,7 +1,7 @@
 {
   "rfc": {
     "prefix": "rfc",
-    "desc": "React Functional Component",
+    "description": "React Functional Component",
     "body": [
       "\n",
       "export const ${1:name} = () => {",
@@ -14,7 +14,7 @@
   },
   "rfcp": {
     "prefix": "rfcp",
-    "desc": "React Functional Component with Props",
+    "description": "React Functional Component with Props",
     "body": [
       "\n",
       "type TProps = Readonly<{",
@@ -31,7 +31,7 @@
   },
   "cl": {
     "prefix": "cl",
-    "desc": "console.log",
+    "description": "console.log",
     "body": ["console.log(${0});"]
   },
   "ucl": {

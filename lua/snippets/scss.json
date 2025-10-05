@@ -1,7 +1,7 @@
 {
   "use": {
     "prefix": "use",
-    "desc": "Import variables.module.scss and global.scss (bibv)",
+    "description": "Import variables.module.scss and global.scss (bibv)",
     "body": [
       "@use \"@/variables.module.scss\" as *;",
       "@use \"@/globals.scss\";"
