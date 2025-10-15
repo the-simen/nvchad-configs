@@ -41,7 +41,7 @@ M.ui = {
   tabufline = {
     enabled = true,
     lazyload = false,
-    order = { "treeOffset", "buffers", "tabs", "btns" },
+    order = { "treeOffset", "buffers", "tabs" },
     modules = nil,
   },
 }
