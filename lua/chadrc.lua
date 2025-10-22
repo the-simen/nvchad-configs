@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "ashes",
+  theme = "aquarium",
   transparency = true,
   border = "rounded",
   integrations = {
