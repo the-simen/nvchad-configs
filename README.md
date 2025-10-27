@@ -20,8 +20,8 @@ _Mode: n = Normal, i = Insert, v = Visual_
 | `<M-h>` | Toggle horizontal terminal | n |
 | `<M-v>` | Toggle vertical terminal | n |
 | `<M-i>` | Toggle floating terminal | n |
-| `<C-y>` | Accept nvim-cmp completion | i |
-| `<C-c>` | Accept codeium inline suggestions | i |
+| `<C-c>` | Accept nvim-cmp completion | i |
+| `<C-y>` | Accept codeium inline suggestions | i |
 
 ## Nvim-tree
 | Key | Description | Mode |

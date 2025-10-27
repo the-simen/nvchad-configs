@@ -29,7 +29,7 @@ return {
         documentation = cmp.config.window.bordered(),
       },
       mapping = {
-        ["<C-y>"] = cmp.mapping.confirm { select = true },
+        ["<C-c>"] = cmp.mapping.confirm { select = true },
         ["<CR>"] = nil,
         ["<Tab>"] = nil,
         ["<C-n>"] = cmp.mapping.select_next_item(),
