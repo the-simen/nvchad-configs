@@ -43,3 +43,12 @@ map("n", ">", ":vertical resize +5<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>rn", function()
   return ":IncRename " .. vim.fn.expand "<cword>"
 end, { expr = true })
+map({ "n", "t" }, "<A-i>", function()
+    require("nvchad.term").toggle { pos = "float", id = "floatTerm", float_opts={
+        border = "rounded",
+        row = 0.25,
+        col = 0.05,
+        width = 0.9,
+        height = 0.6
+    }}
+end, { desc = "terminal toggle floating term" })

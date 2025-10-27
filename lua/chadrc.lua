@@ -11,7 +11,7 @@ M.base46 = {
   border = "rounded",
   integrations = {
     "render-markdown",
-  }
+  },
   -- hl_override = {
   -- 	Comment = { italic = true },
   -- 	["@comment"] = { italic = true },
