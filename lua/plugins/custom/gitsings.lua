@@ -1,6 +1,7 @@
 return {
   "lewis6991/gitsigns.nvim",
   event = { "BufReadPre", "BufNewFile" },
+
   opts = {
     signs = {
       add = { text = "▎" },
@@ -8,6 +9,12 @@ return {
       delete = { text = "" },
       topdelete = { text = "" },
       changedelete = { text = "▎" },
+      untracked = { text = "┆" },
     },
+    watch_gitdir = {
+      interval = 1000,
+      follow_files = true,
+    },
+    auto_attach = true,
   },
 }

@@ -23,7 +23,7 @@ if not util.orig_open_floating_preview then
   util.orig_open_floating_preview = util.open_floating_preview
 end
 
-function open_floating_preview(contents, syntax, opts)
+function Open_floating_preview(contents, syntax, opts)
   opts = opts or {}
   opts.border = opts.border or "rounded"
   return util.orig_open_floating_preview(contents, syntax, opts)

@@ -1,6 +1,40 @@
 return {
   "nvim-tree/nvim-tree.lua",
   opts = {
+     diagnostics = {
+      enable = true,
+      show_on_dirs = true,
+      show_on_open_dirs = false,
+      icons = {
+        hint = " ",
+        info = " ",
+        warning = " ",
+        error = " ",
+      },
+    },
+    renderer = {
+      icons = {
+        show = {
+          diagnostics = true,
+          modified = true,
+          git = true,
+        },
+        glyphs = {
+          modified = "󰽂 ", -- можно поставить, например, "" или "*"
+        },
+      },
+    },
+    git = {
+      enable = true,
+      ignore = true,
+      show_on_dirs = true,
+      show_on_open_dirs = false,
+    },
+    modified = {
+      enable = true,
+      show_on_dirs = true,
+      show_on_open_dirs = false,
+    },
     view = { width = 40, side = "left" },
     on_attach = function(bufnr)
       local api = require "nvim-tree.api"
