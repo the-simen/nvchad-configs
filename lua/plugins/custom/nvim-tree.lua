@@ -1,7 +1,11 @@
 return {
   "nvim-tree/nvim-tree.lua",
   opts = {
-     diagnostics = {
+    filters = {
+      dotfiles = false,
+      git_ignored = false,
+    },
+    diagnostics = {
       enable = true,
       show_on_dirs = true,
       show_on_open_dirs = false,

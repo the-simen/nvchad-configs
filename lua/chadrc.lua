@@ -6,7 +6,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "aquarium",
+  theme = "kanagawa-dragon",
   transparency = true,
   border = "rounded",
   integrations = {
