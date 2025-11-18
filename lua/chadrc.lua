@@ -24,6 +24,8 @@ M.ui = {
     icons = true,
     lspkind_text = true,
     style = "atom_colored", -- default/flat_light/flat_dark/atom/atom_colored
+    bordered = true,
+    border = "rounded",
   },
 
   telescope = { style = "bordered" }, -- borderless / bordered

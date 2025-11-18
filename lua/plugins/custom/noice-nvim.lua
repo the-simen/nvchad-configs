@@ -10,8 +10,20 @@ return {
         view = "cmdline_popup",
         opts = { position = { row = 5, col = "50%" }, size = { width = 60 } },
       },
-      popupmenu = { enabled = true, backend = "nui" },
-      lsp = { hover = { enabled = true }, signature = { enabled = false }, diagnostics = { enabled = true } },
+      popupmenu = { enabled = true, backend = "popup" },
+      borders = { enabled = true },
+      lsp = {
+        hover = {
+          enabled = true,
+          view = nil,
+          opts = {
+            border = "rounded",
+            position = { row = 2, col = 1 },
+          },
+        },
+        signature = { enabled = false },
+        diagnostics = { enabled = true },
+      },
     }
   end,
 }

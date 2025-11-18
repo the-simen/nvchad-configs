@@ -15,11 +15,16 @@ local lazy_config = require "configs.lazy"
 
 -- load plugins
 require("lazy").setup({
+  ui = {
+    border = "rounded",
+    backdrop = "transparent",
+  },
   {
     "NvChad/NvChad",
     lazy = false,
     branch = "v2.5",
     import = "nvchad.plugins",
+    border = "rounded",
   },
 
   { import = "plugins" },
