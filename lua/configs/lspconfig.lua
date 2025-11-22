@@ -20,7 +20,7 @@ vim.lsp.config["cssls"] = {
   },
 }
 
-local servers = { "html", "cssls", "vtsls", "jsonls" }
+local servers = { "html", "cssls", "vtsls", "jsonls", "tailwindcss" }
 vim.lsp.enable(servers)
 
 -- read :h vim.lsp.config for changing options of lsp servers
