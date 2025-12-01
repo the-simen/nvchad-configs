@@ -4,11 +4,11 @@ return {
   dependencies = { "MunifTanjim/nui.nvim" },
   config = function()
     require("noice").setup {
-      messages = { enabled = true, view = "mini" },
+      messages = { enabled = true, view = nil },
       cmdline = {
         enabled = true, -- перехватывает командную строку
         view = "cmdline_popup",
-        opts = { position = { row = 5, col = "50%" }, size = { width = 60 } },
+        opts = { position = { row = 2, col = "50%" }, size = { width = 60 } },
       },
       popupmenu = { enabled = true, backend = "popup" },
       borders = { enabled = true },
@@ -21,13 +21,16 @@ return {
             position = { row = 2, col = 1 },
           },
         },
-        signature = { enabled = true, auto_open = false, border = "rounded" },
+        signature = {
+          enabled = true,
+          auto_open = { trigger = false },
+          opts = {
+            border = "rounded",
+            position = { row = 2, col = 1 },
+          },
+        },
         diagnostics = { enabled = true },
       },
     }
-
-    vim.keymap.set("i", "<C-s>", function()
-      vim.cmd "Noice lsp signature"
-    end, { desc = "LSP Signature (noice)" })
   end,
 }
