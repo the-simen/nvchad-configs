@@ -21,9 +21,13 @@ return {
             position = { row = 2, col = 1 },
           },
         },
-        signature = { enabled = false },
+        signature = { enabled = true, auto_open = false, border = "rounded" },
         diagnostics = { enabled = true },
       },
     }
+
+    vim.keymap.set("i", "<C-s>", function()
+      vim.cmd "Noice lsp signature"
+    end, { desc = "LSP Signature (noice)" })
   end,
 }
