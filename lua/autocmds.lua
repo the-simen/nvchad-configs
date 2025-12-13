@@ -23,7 +23,7 @@ autocmd("TextYankPost", {
 })
 
 autocmd("FileType", {
-  pattern = { "gitcommit", "markdown" },
+  pattern = { "gitcommit" },
   callback = function()
     vim.wo.spell = true
   end,
