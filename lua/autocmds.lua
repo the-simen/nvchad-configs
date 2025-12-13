@@ -1,4 +1,5 @@
 require "nvchad.autocmds"
+local autocmd = vim.api.nvim_create_autocmd
 
 -- Автооткрытие nvim-tree при старте
 local function open_nvim_tree(data)
@@ -13,11 +14,17 @@ local function open_nvim_tree(data)
   end, 50)
 end
 
-vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
+autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
+autocmd("TextYankPost", {
     callback = function()
         vim.highlight.on_yank()
     end,
 })
 
+autocmd("FileType", {
+  pattern = "gitcommit",
+  callback = function()
+    vim.wo.spell = true
+  end,
+})
