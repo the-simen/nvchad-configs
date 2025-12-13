@@ -22,8 +22,8 @@ return {
           },
         },
         signature = {
-          enabled = true,
-          auto_open = { trigger = false },
+          enabled = false,
+          auto_open = { enabled = false, trigger = false },
           opts = {
             border = "rounded",
             position = { row = 2, col = 1 },
