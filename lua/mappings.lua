@@ -23,6 +23,14 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", silent = tru
 
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
 map("n", "<leader>rm", "<cmd>RenderMarkdown toggle<cr>", { desc = "Toggle Render Markdown" })
+map("n", "<leader>ts", function()
+  vim.cmd("set spell!")
+  if vim.wo.spell then
+    vim.notify("Spellcheck enabled", vim.log.levels.INFO, { title = "Spell" })
+  else
+    vim.notify("Spellcheck disabled", vim.log.levels.INFO, { title = "Spell" })
+  end
+end, { desc = "Toggle Spellcheck" })
 
 vim.keymap.set("n", "<leader>cd", function()
   vim.diagnostic.open_float(nil, {
