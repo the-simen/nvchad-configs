@@ -1,6 +1,12 @@
 -- This file needs to have same structure as nvconfig.lua
 -- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
 -- Please read that file to know all available options :(
+local vim = vim
+local opt = vim.opt
+
+opt.foldmethod = "indent"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldlevel = 99
 
 ---@type ChadrcConfig
 local M = {}
@@ -13,8 +19,8 @@ M.base46 = {
     "render-markdown",
   },
   hl_override = {
-  	Comment = { italic = true },
-  	["@comment"] = { italic = true },
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
   },
 }
 
