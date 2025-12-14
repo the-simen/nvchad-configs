@@ -33,7 +33,7 @@ _Mode: n = Normal, i = Insert, v = Visual_
 | `zo` | Open fold under cursor |
 | `zO` | Open fold under cursor recursively |
 | `zM` | Close all folds in current buf |
-| `zC` | Open all folds in current buf |
+| `zR` | Open all folds in current buf |
 
 ## Nvim-tree
 | Key | Description | Mode |
