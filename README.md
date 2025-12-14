@@ -23,6 +23,18 @@ _Mode: n = Normal, i = Insert, v = Visual_
 | `<C-c>` | Accept nvim-cmp completion | i |
 | `<C-y>` | Accept codeium inline suggestions | i |
 
+## Folds
+| Key | Description |
+| --- | --- |
+| `za` | Toggle fold under cursor |
+| `zA` | Toggle fold under cursor recursively |
+| `zc` | Close fold under cursor |
+| `zC` | Close fold under cursor recursively |
+| `zo` | Open fold under cursor |
+| `zO` | Open fold under cursor recursively |
+| `zM` | Close all folds in current buf |
+| `zC` | Open all folds in current buf |
+
 ## Nvim-tree
 | Key | Description | Mode |
 | ---| --- | --- |
