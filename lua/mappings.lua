@@ -24,7 +24,7 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", silent = tru
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
 map("n", "<leader>rm", "<cmd>RenderMarkdown toggle<cr>", { desc = "Toggle Render Markdown" })
 map("n", "<leader>ts", function()
-  vim.cmd("set spell!")
+  vim.cmd "set spell!"
   if vim.wo.spell then
     vim.notify("Spellcheck enabled", vim.log.levels.INFO, { title = "Spell" })
   else
@@ -32,7 +32,7 @@ map("n", "<leader>ts", function()
   end
 end, { desc = "Toggle Spellcheck" })
 
-vim.keymap.set("n", "<leader>cd", function()
+map("n", "<leader>cd", function()
   vim.diagnostic.open_float(nil, {
     scope = "cursor",
     focus = true,
@@ -48,15 +48,22 @@ map("v", ">", ">gv", { desc = "Indent right", silent = true })
 map("n", "<", ":vertical resize -5<CR>", { noremap = true, silent = true })
 map("n", ">", ":vertical resize +5<CR>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>rn", function()
+map("n", "<leader>rn", function()
   return ":IncRename " .. vim.fn.expand "<cword>"
 end, { expr = true })
 map({ "n", "t" }, "<A-i>", function()
-    require("nvchad.term").toggle { pos = "float", id = "floatTerm", float_opts={
-        border = "rounded",
-        row = 0.25,
-        col = 0.05,
-        width = 0.9,
-        height = 0.6
-    }}
+  require("nvchad.term").toggle {
+    pos = "float",
+    id = "floatTerm",
+    float_opts = {
+      border = "rounded",
+      row = 0.25,
+      col = 0.05,
+      width = 0.9,
+      height = 0.6,
+    },
+  }
 end, { desc = "terminal toggle floating term" })
+map("n", "<leader>sp", "<cmd>PossessionPick<CR>", { desc = "Pick session (Telescope)" })
+map("n", "<leader>sl", "<cmd>PossessionLoadCwd<CR>", { desc = "Load session for cwd" })
+map("n", "<leader>ss", "<cmd>PossessionSaveCwd<CR>", { desc = "Save session for cwd" })
