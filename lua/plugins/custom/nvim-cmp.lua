@@ -25,8 +25,14 @@ return {
         end,
       },
       window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered {
+          border = "rounded", -- явно указываем тип бордера
+          winhighlight = "Normal:Normal,FloatBorder:CmpBorder,CursorLine:Visual,Search:None",
+        },
+        documentation = cmp.config.window.bordered {
+          border = "rounded",
+          winhighlight = "Normal:Normal,FloatBorder:CmpBorder,CursorLine:Visual,Search:None",
+        },
       },
       mapping = {
         ["<C-c>"] = cmp.mapping.confirm { select = true },

@@ -1,5 +1,3 @@
-require("telescope").load_extension "noice"
-
 return {
   "folke/noice.nvim",
   event = "VeryLazy",
