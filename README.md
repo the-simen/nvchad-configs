@@ -22,6 +22,12 @@ _Mode: n = Normal, i = Insert, v = Visual_
 | `<M-i>` | Toggle floating terminal | n |
 | `<C-c>` | Accept nvim-cmp completion | i |
 | `<C-y>` | Accept codeium inline suggestions | i |
+| `<leader>sp` | Pick previous sessions | n |
+| `<leader>ss` | Quick save cwd session | n |
+| `<leader>sl` | Quick load cwd session | n |
+| `<leader>nh` | Show messages history | n |
+
+
 
 ## Folds
 | Key | Description |

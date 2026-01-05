@@ -4,7 +4,9 @@ local autocmd = vim.api.nvim_create_autocmd
 -- Автооткрытие nvim-tree при старте
 local function open_nvim_tree(data)
   local directory = vim.fn.isdirectory(data.file) == 1
-  if not directory then return end
+  if not directory then
+    return
+  end
 
   vim.cmd.cd(data.file)
 
@@ -17,9 +19,9 @@ end
 autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
 
 autocmd("FileType", {
