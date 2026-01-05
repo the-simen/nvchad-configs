@@ -48,11 +48,9 @@ map("v", ">", ">gv", { desc = "Indent right", silent = true })
 map("n", "<", ":vertical resize -5<CR>", { noremap = true, silent = true })
 map("n", ">", ":vertical resize +5<CR>", { noremap = true, silent = true })
 
-map("n", "<leader>rn", function()
-  return ":IncRename " .. vim.fn.expand "<cword>"
-end, { expr = true })
 map({ "n", "t" }, "<A-i>", function()
-  require("nvchad.term").toggle {
+  local Term = require "nvchad.term"
+  Term.toggle {
     pos = "float",
     id = "floatTerm",
     float_opts = {
@@ -64,16 +62,17 @@ map({ "n", "t" }, "<A-i>", function()
     },
   }
 end, { desc = "terminal toggle floating term" })
+
 map("n", "<leader>sp", "<cmd>PossessionPick<CR>", { desc = "Pick session (Telescope)" })
 map("n", "<leader>sl", "<cmd>PossessionLoadCwd<CR>", { desc = "Load session for cwd" })
 map("n", "<leader>ss", "<cmd>PossessionSaveCwd<CR>", { desc = "Save session for cwd" })
 map("n", "<leader>nh", "<cmd>Telescope notify<cr>", { desc = "Telescope notify history" })
-vim.api.nvim_set_keymap(
+map(
   "i",
   "<Tab>",
   [[luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>']],
   { expr = true, noremap = true }
 )
-vim.api.nvim_set_keymap("s", "<Tab>", [[<Plug>luasnip-expand-or-jump]], {})
-vim.api.nvim_set_keymap("i", "<S-Tab>", [[<Plug>luasnip-jump-prev]], {})
-vim.api.nvim_set_keymap("s", "<S-Tab>", [[<Plug>luasnip-jump-prev]], {})
+map("s", "<Tab>", [[<Plug>luasnip-expand-or-jump]], {})
+map("i", "<S-Tab>", [[<Plug>luasnip-jump-prev]], {})
+map("s", "<S-Tab>", [[<Plug>luasnip-jump-prev]], {})

@@ -1,51 +1,94 @@
 local ls = require "luasnip"
 local s = ls.snippet
-local t = ls.text_node
 local i = ls.insert_node
 local f = ls.function_node
+local fmt = require("luasnip.extras.fmt").fmt
+local get_current_file_name = require "snippets.utils.get_current_file_name"
 
 ls.add_snippets("typescriptreact", {
-  s({
-    trig = "rfc",
-    name = "React Functional Component",
-  }, {
-    t { "export const " },
-    f(function()
-      return vim.fn.expand "%:t:r"
-    end),
-    t { " = () => {", "", "" },
-    t {
-      "\treturn (",
-      "\t\t<div>",
+
+  s(
+    {
+      trig = "rfc",
+      name = "React Functional Component",
     },
-    i(0),
-    t { "</div>", "" },
-    t {
-      "\t)",
-      "}",
+    fmt(
+      [[
+
+        export const {} = () => {{
+
+          return (
+            <div>{}</div>
+          )
+        }}
+
+      ]],
+      {
+        f(get_current_file_name),
+        i(0),
+      }
+    )
+  ),
+
+  s(
+    {
+      trig = "rfcp",
+      name = "React Functional Component with Props",
     },
-  }),
-  s({
-    trig = "rfcp",
-    name = "React Functional Component with Props",
-  }, {
-    t { "type TProps = {", "\t" },
-    i(1),
-    t { "", "}", "", "" },
-    t { "export const " },
-    f(function()
-      return vim.fn.expand "%:t:r"
-    end),
-    t { " = ({ " },
-    i(2),
-    t {
-      " }: TProps) => {",
-      "",
-      "",
-      "\treturn (",
-      "\t\t<div>",
+    fmt(
+      [[
+
+        type TProps = {{
+          {}
+        }}
+
+        export const {} = ({{ {} }}: TProps) => {{
+          
+          return (
+            <div>{}</div>
+          )
+        }}
+
+      ]],
+      {
+        i(1),
+        f(get_current_file_name),
+        i(2),
+        i(0),
+      }
+    )
+  ),
+
+  s(
+    {
+      trig = "cl",
+      name = "console.log",
     },
-    i(0),
-    t { "</div>", "\t)", "}" },
-  }),
+    fmt(
+      [[
+        console.log({});
+      ]],
+      {
+        i(0),
+      }
+    )
+  ),
+
+  s(
+    {
+      trig = "ucl",
+      name = "console.log inside useEffect",
+    },
+    fmt(
+      [[
+        useEffect(() => {{
+          console.log({});
+        }}, [{}]);
+      ]],
+      {
+        i(0),
+        i(1),
+      }
+    )
+  ),
 })
