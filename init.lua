@@ -39,6 +39,7 @@ dofile(vim.g.base46_cache .. "render-markdown")
 
 require "options"
 require "autocmds"
+require "snippets"
 
 vim.schedule(function()
   require "mappings"

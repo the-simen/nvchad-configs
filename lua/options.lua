@@ -3,8 +3,6 @@ require "nvchad.options"
 local inc_rename = require "inc_rename"
 inc_rename.setup()
 
-vim.g.vscode_snippets_path = "/home/thesimen/.config/nvim/snippets"
-
 vim.lsp.buf.hover = {
   border = "rounded",
 }

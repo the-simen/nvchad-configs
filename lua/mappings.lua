@@ -67,4 +67,13 @@ end, { desc = "terminal toggle floating term" })
 map("n", "<leader>sp", "<cmd>PossessionPick<CR>", { desc = "Pick session (Telescope)" })
 map("n", "<leader>sl", "<cmd>PossessionLoadCwd<CR>", { desc = "Load session for cwd" })
 map("n", "<leader>ss", "<cmd>PossessionSaveCwd<CR>", { desc = "Save session for cwd" })
-map("n", "<leader>nh", "<cmd>Telescope noice<cr>", { desc = "Telescope noice history" })
+map("n", "<leader>nh", "<cmd>Telescope notify<cr>", { desc = "Telescope notify history" })
+vim.api.nvim_set_keymap(
+  "i",
+  "<Tab>",
+  [[luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>']],
+  { expr = true, noremap = true }
+)
+vim.api.nvim_set_keymap("s", "<Tab>", [[<Plug>luasnip-expand-or-jump]], {})
+vim.api.nvim_set_keymap("i", "<S-Tab>", [[<Plug>luasnip-jump-prev]], {})
+vim.api.nvim_set_keymap("s", "<S-Tab>", [[<Plug>luasnip-jump-prev]], {})
