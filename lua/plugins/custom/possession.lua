@@ -45,8 +45,6 @@ return {
         on_quit = true,
       },
 
-      autoload = true,
-
       plugins = {
         delete_hidden_buffers = false,
         neo_tree = false,
