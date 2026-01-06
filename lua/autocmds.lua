@@ -30,3 +30,13 @@ autocmd("FileType", {
     vim.wo.spell = true
   end,
 })
+
+autocmd("BufWritePre", {
+  callback = function(args)
+    require("conform").format {
+      bufnr = args.buf,
+      timeout_ms = 500,
+      lsp_fallback = false,
+    }
+  end,
+})

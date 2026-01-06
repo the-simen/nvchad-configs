@@ -20,7 +20,15 @@ vim.lsp.config["cssls"] = {
   },
 }
 
-local servers = { "html", "cssls", "vtsls", "jsonls", "tailwindcss" }
+local servers = {
+  "html",
+  "cssls",
+  "vtsls",
+  "jsonls",
+  "tailwindcss",
+  "gitlint",
+  "commitlint",
+}
 vim.lsp.enable(servers)
 
 vim.api.nvim_create_autocmd("LspAttach", {
