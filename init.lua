@@ -15,21 +15,22 @@ vim.opt.rtp:prepend(lazypath)
 
 local lazy_config = require "configs.lazy"
 
--- load plugins
 require("lazy").setup({
-  ui = {
-    border = "rounded",
-    backdrop = "transparent",
-  },
   {
     "NvChad/NvChad",
     lazy = false,
     branch = "v2.5",
     import = "nvchad.plugins",
-    border = "rounded",
   },
-
   { import = "plugins" },
+  {
+    "mason-org/mason.nvim",
+    opts = {
+      ui = {
+        border = "rounded",
+      },
+    },
+  },
 }, lazy_config)
 
 -- load theme
