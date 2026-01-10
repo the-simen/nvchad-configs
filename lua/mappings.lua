@@ -17,12 +17,20 @@ map("n", "<leader>wd", "<C-w>c", { desc = "Close current split" })
 
 map("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
 map("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down", silent = true })
-map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down", silent = true })
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", {
+  desc = "Move selection down",
+  silent = true,
+})
 map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up", silent = true })
-map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", silent = true })
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", {
+  desc = "Move selection up",
+  silent = true,
+})
 
 map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
-map("n", "<leader>rm", "<cmd>RenderMarkdown toggle<cr>", { desc = "Toggle Render Markdown" })
+map("n", "<leader>rm", "<cmd>RenderMarkdown toggle<cr>", {
+  desc = "Toggle Render Markdown",
+})
 map("n", "<leader>ts", function()
   vim.cmd "set spell!"
   if vim.wo.spell then
@@ -63,10 +71,18 @@ map({ "n", "t" }, "<A-i>", function()
   }
 end, { desc = "terminal toggle floating term" })
 
-map("n", "<leader>sp", "<cmd>PossessionPick<CR>", { desc = "Pick session (Telescope)" })
-map("n", "<leader>sl", "<cmd>PossessionLoadCwd<CR>", { desc = "Load session for cwd" })
-map("n", "<leader>ss", "<cmd>PossessionSaveCwd<CR>", { desc = "Save session for cwd" })
-map("n", "<leader>nh", "<cmd>Telescope notify<cr>", { desc = "Telescope notify history" })
+map("n", "<leader>sp", "<cmd>PossessionPick<CR>", {
+  desc = "Pick session (Telescope)",
+})
+map("n", "<leader>sl", "<cmd>PossessionLoadCwd<CR>", {
+  desc = "Load session for cwd",
+})
+map("n", "<leader>ss", "<cmd>PossessionSaveCwd<CR>", {
+  desc = "Save session for cwd",
+})
+map("n", "<leader>nh", "<cmd>Telescope notify<cr>", {
+  desc = "Telescope notify history",
+})
 map(
   "i",
   "<Tab>",

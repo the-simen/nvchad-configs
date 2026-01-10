@@ -4,6 +4,14 @@ vim.lsp.buf.hover = {
   border = "rounded",
 }
 
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.softtabstop = -1
+vim.opt.smartindent = true
+vim.opt.cindent = false
+vim.opt.virtualedit = "block"
+
 -- add yours here!
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
