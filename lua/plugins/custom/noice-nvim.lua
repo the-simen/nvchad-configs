@@ -93,7 +93,7 @@ return {
       borders = { enabled = true },
       lsp = {
         hover = {
-          enabled = true,
+          enabled = false,
           view = nil,
           opts = {
             border = "rounded",

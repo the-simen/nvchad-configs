@@ -16,8 +16,8 @@ return {
           accept_word = false,
           accept_line = false,
           clear = "<C-e>",
-          next = "<M-]>", -- если хочешь циклы
-          prev = "<M-[>", -- тоже полезно
+          next = "<M-]>",
+          prev = "<M-[>",
         },
       },
     }
