@@ -20,7 +20,10 @@ return {
         view = "cmdline_popup",
         format = {
           substitute = {
-            pattern = "^:%s*%%?s/",
+            pattern = {
+              "^:%s*%%?s/",
+              "^:%s*'<,'>%s*s/",
+            },
             view = "cmdline",
             icon = "󰛔",
             lang = "regex",
@@ -37,6 +40,13 @@ return {
             },
           },
           search_up = {
+            view = "cmdline",
+            opts = {
+              size = { width = vim.api.nvim_win_get_width(0) - 41, height = 1 },
+              position = { row = 0, col = 41 },
+            },
+          },
+          input = {
             view = "cmdline",
             opts = {
               size = { width = vim.api.nvim_win_get_width(0) - 41, height = 1 },
