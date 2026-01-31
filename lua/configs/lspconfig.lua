@@ -20,6 +20,20 @@ vim.lsp.config["cssls"] = {
   },
 }
 
+vim.lsp.config["tailwindcss"] = {
+  settings = {
+    tailwindCSS = {
+      lint = {
+        recommended = "warning",
+        invalidApply = "error",
+        invalidScreen = "error",
+        invalidVariant = "error",
+        invalidConfigPath = "error",
+      },
+    },
+  },
+}
+
 local servers = {
   "html",
   "cssls",
