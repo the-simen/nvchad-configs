@@ -1,3 +1,5 @@
 require "snippets.lua.tsx"
 require "snippets.lua.ts"
 require "snippets.lua.scss"
+require "snippets.lua.tsx_html"
+require "snippets.lua.html"
