@@ -9,6 +9,8 @@ map("v", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jj", "<ESC>")
 map("i", "<C-h>", "<BS>")
 map("i", "<C-j>", "<CR>")
+map("n", "<C-p>", "g;", { desc = "Jump to older change (current buffer)" })
+map("n", "<C-n>", "g,", { desc = "Jump to newer change (current buffer)" })
 
 map("n", "<leader>td", "<cmd>TodoTelescope<cr>", { desc = "TodoTelecope" })
 
