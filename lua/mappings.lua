@@ -95,3 +95,7 @@ map(
 map("s", "<Tab>", [[<Plug>luasnip-expand-or-jump]], {})
 map("i", "<S-Tab>", [[<Plug>luasnip-jump-prev]], {})
 map("s", "<S-Tab>", [[<Plug>luasnip-jump-prev]], {})
+map("v", "<leader>tr", "<cmd>Trans to=ru<cr>", { desc = "Translate selection to Russian" })
+map("v", "<leader>te", "<cmd>Trans to=en<cr>", { desc = "Translate selection to English" })
+map("n", "<leader>twr", "<cmd>TransWord to=ru<cr>", { desc = "Translate under cursor to Russian" })
+map("n", "<leader>twe", "<cmd>TransWord to=en<cr>", { desc = "Translate under cursor to Englich" })

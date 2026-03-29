@@ -76,4 +76,10 @@ _Mode: n = Normal, i = Insert, v = Visual_
 | `<leader>gd` | Go to definition | n |
 | `K` | Hover | n |
 
-
+## Translate (it works with litle delay)
+| Key | Description | Mode |
+| ---| --- | --- |
+| `<leader>tr` | Translate selection to Russian | v |
+| `<leader>te` | Translate selection to English | v |
+| `<leader>twr` | Translate word under cursor to Russian | n |
+| `<leader>twe` | Translate word under cursor to English | n |
