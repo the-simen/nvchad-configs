@@ -77,6 +77,7 @@ _Mode: n = Normal, i = Insert, v = Visual_
 | `K` | Hover | n |
 
 ## Translate (it works with litle delay)
+![translate-shell](https://github.com/soimort/translate-shell) is required!
 | Key | Description | Mode |
 | ---| --- | --- |
 | `<leader>tr` | Translate selection to Russian | v |
