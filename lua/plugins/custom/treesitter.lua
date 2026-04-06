@@ -1,5 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  lazy = false,
   opts = {
     indent = { enable = true },
     ensure_installed = {
@@ -12,7 +13,6 @@ return {
       "typescript",
       "tsx",
       "json",
-      "jsonc",
       "yaml",
       "markdown",
     },
