@@ -15,6 +15,7 @@ return {
       "json",
       "yaml",
       "markdown",
+      "bash",
     },
   },
 }

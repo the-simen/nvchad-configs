@@ -45,3 +45,5 @@ require "snippets"
 vim.schedule(function()
   require "mappings"
 end)
+
+require("scripts.treesitter_ensure").setup()
