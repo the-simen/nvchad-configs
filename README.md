@@ -73,7 +73,7 @@ _Mode: n = Normal, i = Insert, v = Visual_
 | `<leader>ra` | NvChad renamer | n |
 | `<leader>cd` | Diagnostics under cursor | n |
 | `<leader>ca` | Code actions | n |
-| `<leader>gd` | Go to definition | n |
+| `gd` | Go to definition | n |
 | `K` | Hover | n |
 
 ## Translate (it works with litle delay)
