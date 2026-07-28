@@ -11,6 +11,8 @@ map("i", "<C-h>", "<BS>")
 map("i", "<C-j>", "<CR>")
 map("n", "<C-p>", "g;", { desc = "Jump to older change (current buffer)" })
 map("n", "<C-n>", "g,", { desc = "Jump to newer change (current buffer)" })
+map("n", "<M-o>", "<cmd>put =''<cr>", { desc = "Add a blank line at the bottom" })
+map("n", "<M-O>", "<cmd>put! =''<cr>", { desc = "Add a blank line at the bottom" })
 
 map("n", "<leader>td", "<cmd>TodoTelescope<cr>", { desc = "TodoTelecope" })
 
