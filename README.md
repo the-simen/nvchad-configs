@@ -17,6 +17,8 @@ _Mode: n = Normal, i = Insert, v = Visual_
 | `>` | Tab selected right | v |
 | `<` | Vertical decrease window size | n |
 | `>` | Vertical increase window size | n |
+| `<M-o>` | Add a blank line at the bottom | n |
+| `<M-O>` | Add a blank line at the above | n |
 | `<M-h>` | Toggle horizontal terminal | n |
 | `<M-v>` | Toggle vertical terminal | n |
 | `<M-i>` | Toggle floating terminal | n |
