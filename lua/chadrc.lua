@@ -12,7 +12,7 @@ opt.foldlevel = 99
 local M = {}
 
 M.base46 = {
-  theme = "gruvbox-alt",
+  theme = "gruvbox",
   transparency = true,
   border = "rounded",
   integrations = {
