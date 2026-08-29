@@ -13,7 +13,7 @@ local M = {}
 
 M.base46 = {
   theme = "gruvbox",
-  transparency = false,
+  transparency = true,
   border = "rounded",
   integrations = {
     "render-markdown",
