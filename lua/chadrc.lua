@@ -36,13 +36,13 @@ M.ui = {
   telescope = { style = "bordered" }, -- borderless / bordered
 
   statusline = {
-    theme = "default", -- default/vscode/vscode_colored/minimal
+    theme = "minimal", -- default/vscode/vscode_colored/minimal
     -- default/round/block/arrow separators work only for default statusline theme
     -- round and block will work for minimal theme only
     git_integration = true,
     branches = true,
     git_status = true,
-    separator_style = "default",
+    separator_style = "round",
     order = nil,
     modules = nil,
   },
