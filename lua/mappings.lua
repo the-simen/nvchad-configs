@@ -4,9 +4,13 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
+vim.opt.langmap =
+  "фa,иb,сc,вd,уe,аf,пg,рh,шi,оj,лk,дl,ьm,тn,щo,зp,йq,кr,ыs,еt,гu,мv,цw,чx,нy,яz"
+
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("v", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jj", "<ESC>")
+map("i", "оо", "<ESC>")
 map("i", "<C-h>", "<BS>")
 map("i", "<C-j>", "<CR>")
 map("n", "<C-p>", "g;", { desc = "Jump to older change (current buffer)" })
