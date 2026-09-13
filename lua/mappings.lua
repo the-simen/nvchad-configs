@@ -4,9 +4,6 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
-vim.opt.langmap =
-  "фa,иb,сc,вd,уe,аf,пg,рh,шi,оj,лk,дl,ьm,тn,щo,зp,йq,кr,ыs,еt,гu,мv,цw,чx,нy,яz"
-
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("v", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jj", "<ESC>")
@@ -105,3 +102,58 @@ map("v", "<leader>tr", "<cmd>Trans to=ru<cr>", { desc = "Translate selection to 
 map("v", "<leader>te", "<cmd>Trans to=en<cr>", { desc = "Translate selection to English" })
 map("n", "<leader>twr", "<cmd>TransWord to=ru<cr>", { desc = "Translate under cursor to Russian" })
 map("n", "<leader>twe", "<cmd>TransWord to=en<cr>", { desc = "Translate under cursor to Englich" })
+
+vim.opt.langmap = {
+  "фa",
+  "иb",
+  "сc",
+  "вd",
+  "уe",
+  "аf",
+  "пg",
+  "рh",
+  "шi",
+  "оj",
+  "лk",
+  "дl",
+  "ьm",
+  "тn",
+  "щo",
+  "зp",
+  "йq",
+  "кr",
+  "ыs",
+  "еt",
+  "гu",
+  "мv",
+  "цw",
+  "чx",
+  "нy",
+  "яz",
+  "ФA",
+  "ИB",
+  "СC",
+  "ВD",
+  "УE",
+  "АF",
+  "ПG",
+  "РH",
+  "ШI",
+  "ОJ",
+  "ЛK",
+  "ДL",
+  "ЬM",
+  "ТN",
+  "ЩO",
+  "ЗP",
+  "ЙQ",
+  "КR",
+  "ЫS",
+  "ЕT",
+  "ГU",
+  "МV",
+  "ЦW",
+  "ЧX",
+  "НY",
+  "ЯZ",
+}
