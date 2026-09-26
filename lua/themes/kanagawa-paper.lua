@@ -2,18 +2,16 @@ local M = {}
 
 M.base_30 = {
   white = "#dcd7ba",
-  darker_black = "#181820",
-  black = "#1f1f28",
-  black2 = "#262634",
-  one_bg = "#2a2a37",
-  one_bg2 = "#303042",
-  one_bg3 = "#36364a",
-
-  grey = "#8a8980",
-  grey_fg = "#a19f95",
-  grey_fg2 = "#b0ad9f",
-
-  light_grey = "#85826f",
+  darker_black = "#191922",
+  black = "#1F1F28",
+  black2 = "#25252e",
+  one_bg = "#272730",
+  one_bg2 = "#2f2f38",
+  one_bg3 = "#363646",
+  grey = "#43434c",
+  grey_fg = "#4c4c55",
+  grey_fg2 = "#53535c",
+  light_grey = "#5c5c65",
 
   red = "#c4746e",
   baby_pink = "#cfa0a8",
@@ -64,18 +62,23 @@ M.base_16 = {
   base0F = "#b58aa0", -- pink
 }
 
+M.polish_hl = {
+  treesitter = {
+    ["@keyword.import"] = { fg = M.base_30.purple },
+    ["@uri"] = { fg = M.base_30.blue },
+    ["@tag.delimiter"] = { fg = M.base_30.red },
+    ["@variable.member.key"] = { fg = M.base_30.white },
+    ["@punctuation.bracket"] = { fg = M.base_30.pmenu_bg },
+    ["@punctuation.delimiter"] = { fg = M.base_30.white },
+  },
+
+  syntax = {
+    Number = { fg = M.base_30.baby_pink },
+  },
+}
+
 M.type = "dark"
 
-M.polish_hl = {
-  CursorLine = { bg = "#2a2a37" },
-  Visual = { bg = "#3a342a" },
-  PmenuSel = { bg = "#3a342a", fg = "#dcd7ba" },
-}
-
-M.overrides = {
-  Visual = { bg = "#3a342a" },
-  CursorLine = { bg = "#2f2f3d" },
-  PmenuSel = { bg = "#3a342a", fg = "#dcd7ba" },
-}
+M = require("base46").override_theme(M, "kanagawa")
 
 return M

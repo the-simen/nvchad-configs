@@ -64,19 +64,23 @@ M.base_16 = {
   base0F = "#cfa0a8",
 }
 
+M.polish_hl = {
+  treesitter = {
+    ["@keyword.import"] = { fg = M.base_30.purple },
+    ["@uri"] = { fg = M.base_30.blue },
+    ["@tag.delimiter"] = { fg = M.base_30.red },
+    ["@variable.member.key"] = { fg = M.base_30.white },
+    ["@punctuation.bracket"] = { fg = M.base_30.pmenu_bg },
+    ["@punctuation.delimiter"] = { fg = M.base_30.white },
+  },
+
+  syntax = {
+    Number = { fg = M.base_30.baby_pink },
+  },
+}
+
 M.type = "dark"
 
--- точечная коррекция hover/selection
-M.polish_hl = {
-  CursorLine = { bg = "#2f2a23" },
-  Visual = { bg = "#5a4d38" },
-  PmenuSel = { bg = "#5a4d38", fg = "#d8d3b0" },
-}
-
-M.overrides = {
-  Visual = { bg = "#5a4d38" },
-  CursorLine = { bg = "#342f26" },
-  PmenuSel = { bg = "#5a4d38", fg = "#d8d3b0" },
-}
+M = require("base46").override_theme(M, "kanagawa")
 
 return M
