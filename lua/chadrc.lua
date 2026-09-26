@@ -12,7 +12,7 @@ opt.foldlevel = 99
 local M = {}
 
 M.base46 = {
-  theme = "rosepine",
+  theme = "kanagawa-custom",
   transparency = true,
   border = "rounded",
   integrations = {
