@@ -1,4 +1,4 @@
-_This repo is supposed to be used as config by NvChad!_
+Do `:TSSync` after cloning
 
 # Useful mappings
 
