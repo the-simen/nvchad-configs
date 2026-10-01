@@ -4,6 +4,9 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
+-- <C-PageUp> have to be mapped to <C-i> in terminal
+-- so that mapping is actually mapping for <C-i>
+-- and <C-i> works as expected and do not conflict with <Tab>
 map("n", "<C-PageUp>", function()
   vim.api.nvim_feedkeys(string.char(9), "nx", false)
 end, { silent = true })
