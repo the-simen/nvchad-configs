@@ -24,6 +24,27 @@ autocmd("TextYankPost", {
   end,
 })
 
+-- Перекомпиляция base46-кэша, если сгенерированный Noctalia-файл новее.
+-- Noctalia перезаписывает lua/themes/noctalia.lua при смене палитры,
+-- а nvim на старте лишь читает готовый кэш (иначе перекомпиляция
+-- происходит только через меню тем <leader>th).
+autocmd("VimEnter", {
+  callback = function()
+    local ok, nvconfig = pcall(require, "nvconfig")
+    if not ok or nvconfig.base46.theme ~= "noctalia" then
+      return
+    end
+
+    local theme_stat = vim.uv.fs_stat(vim.fn.stdpath "config" .. "/lua/themes/noctalia.lua")
+    local cache_stat = vim.uv.fs_stat(vim.g.base46_cache .. "defaults")
+    if theme_stat and (not cache_stat or theme_stat.mtime.sec > cache_stat.mtime.sec) then
+      pcall(function()
+        require("base46").load_all_highlights()
+      end)
+    end
+  end,
+})
+
 autocmd("FileType", {
   pattern = { "gitcommit" },
   callback = function()

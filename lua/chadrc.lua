@@ -13,7 +13,7 @@ local M = {}
 
 M.base46 = {
   ---@diagnostic disable-next-line: assign-type-mismatch
-  theme = "everforest",
+  theme = "noctalia",
   transparency = true,
   border = "rounded",
   integrations = {
