@@ -13,7 +13,7 @@ local M = {}
 
 M.base46 = {
   ---@diagnostic disable-next-line: assign-type-mismatch
-  theme = "kanagawa-paper",
+  theme = "everforest",
   transparency = true,
   border = "rounded",
   integrations = {
