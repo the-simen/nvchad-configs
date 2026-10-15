@@ -11,9 +11,13 @@ opt.foldlevel = 99
 ---@type ChadrcConfig
 local M = {}
 
+-- lua/themes/noctalia.lua is rendered by Noctalia templates and not tracked
+-- in git; fall back to a bundled theme on fresh clones / before first render.
+local has_noctalia = vim.uv.fs_stat(vim.fn.stdpath "config" .. "/lua/themes/noctalia.lua") ~= nil
+
 M.base46 = {
   ---@diagnostic disable-next-line: assign-type-mismatch
-  theme = "noctalia",
+  theme = has_noctalia and "noctalia" or "kanagawa-paper",
   transparency = true,
   border = "rounded",
   integrations = {
