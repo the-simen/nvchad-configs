@@ -63,6 +63,26 @@ return {
             after_session_load()
           end, 100)
         end,
+
+        before_save = function(name)
+          -- Не сохранять сессию, если нет ни одного буфера с реальным файлом
+          -- (pipe, help, terminal, unnamed buffer)
+          local has_real_file = false
+          for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+            if vim.api.nvim_buf_is_loaded(buf) then
+              local bt = vim.bo[buf].buftype
+              local fname = vim.api.nvim_buf_get_name(buf)
+              if bt == "" and fname ~= "" then
+                has_real_file = true
+                break
+              end
+            end
+          end
+          if not has_real_file then
+            return nil  -- abort save entirely
+          end
+          return {}
+        end,
       },
     }
   end,
