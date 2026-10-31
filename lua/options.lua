@@ -8,6 +8,12 @@ vim.opt.smartindent = true
 vim.opt.cindent = false
 vim.opt.virtualedit = "block"
 
+vim.filetype.add {
+  pattern = {
+    [".*%.tmux%.conf"] = "tmux",
+  },
+}
+
 -- add yours here!
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
