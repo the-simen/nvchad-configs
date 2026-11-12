@@ -42,6 +42,7 @@ local servers = {
   "tailwindcss",
   "gitlint",
   "commitlint",
+  "clangd",
 }
 vim.lsp.enable(servers)
 
