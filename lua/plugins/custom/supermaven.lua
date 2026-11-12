@@ -1,6 +1,6 @@
 return {
   "supermaven-inc/supermaven-nvim",
-  enabled = false,
+  enabled = false, -- local Minuet/Ollama provides inline suggestions
   event = "InsertEnter",
   config = function()
     require("supermaven-nvim").setup {

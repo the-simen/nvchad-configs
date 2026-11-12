@@ -1,5 +1,6 @@
 return {
   "Exafunction/codeium.nvim",
+  enabled = false, -- local Minuet/Ollama provides inline suggestions
   dependencies = {
     "nvim-lua/plenary.nvim",
     "hrsh7th/nvim-cmp",
