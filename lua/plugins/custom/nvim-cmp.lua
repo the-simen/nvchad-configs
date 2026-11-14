@@ -23,6 +23,9 @@ return {
           luasnip.lsp_expand(args.body)
         end,
       },
+      view = {
+        entries = { vertical_positioning = "above" },
+      },
       window = {
         completion = cmp.config.window.bordered {
           border = "rounded", -- явно указываем тип бордера
