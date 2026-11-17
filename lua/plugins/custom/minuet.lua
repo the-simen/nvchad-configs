@@ -1,8 +1,9 @@
 return {
   "milanglacier/minuet-ai.nvim",
-  event = "InsertEnter",
+  lazy = false,
   config = function()
     local service = "ollama.service"
+    local model = "qwen2.5-coder:14b"
     local lease_dir = vim.fn.stdpath "state" .. "/ollama-nvim"
     local lease = lease_dir .. "/" .. vim.fn.getpid()
 
@@ -60,15 +61,37 @@ return {
             end,
             name = "Ollama",
             end_point = "http://127.0.0.1:11434/v1/completions",
-            model = "qwen2.5-coder:14b",
+            model = model,
             optional = { max_tokens = 48, top_p = 0.9 },
           },
         },
       }
-      -- FileType already fired for the buffer that triggered InsertEnter.
+      -- FileType may have fired before Ollama became ready.
       if not vim.tbl_contains({ "bigfile", "oil" }, vim.bo.filetype) then
         vim.b.minuet_virtual_text_auto_trigger = true
       end
+    end
+
+    local function preload_model()
+      local body = vim.json.encode {
+        model = model,
+        prompt = "",
+        keep_alive = -1,
+      }
+      vim.system({
+        "curl", "-fsS", "--max-time", "120",
+        "-H", "Content-Type: application/json",
+        "-d", body,
+        "http://127.0.0.1:11434/api/generate",
+      }, { text = true }, function(result)
+        if result.code ~= 0 then
+          vim.schedule(function()
+            if not leaving then
+              vim.notify("Ollama model preload failed: " .. (result.stderr or ""), vim.log.levels.WARN)
+            end
+          end)
+        end
+      end)
     end
 
     local deadline = vim.uv.hrtime() + 5e9
@@ -83,6 +106,7 @@ return {
           end
           if result.code == 0 then
             setup_minuet()
+            preload_model()
           elseif vim.uv.hrtime() >= deadline then
             vim.notify("Ollama did not become ready within 5 seconds", vim.log.levels.WARN)
             setup_minuet()
@@ -93,18 +117,13 @@ return {
       end)
     end
 
-    vim.system({ "systemctl", "--user", "start", service }, { text = true }, function(result)
-      vim.schedule(function()
-        if leaving then
-          return
-        end
-        if result.code ~= 0 then
-          vim.notify("Ollama failed to start: " .. result.stderr, vim.log.levels.ERROR)
-          setup_minuet()
-        else
-          check_ready()
-        end
-      end)
-    end)
+    -- Finish starting the service before the user can quit; model loading stays asynchronous.
+    local result = vim.system({ "systemctl", "--user", "start", service }, { text = true }):wait()
+    if result.code ~= 0 then
+      vim.notify("Ollama failed to start: " .. (result.stderr or ""), vim.log.levels.ERROR)
+      setup_minuet()
+    else
+      check_ready()
+    end
   end,
 }
